@@ -86,8 +86,8 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* CTA Button */}
-        <button className="hidden md:block bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/30 hover:scale-105 uppercase tracking-wide text-sm border border-amber-400/20">
+        {/* CTA Button - Desktop only with proper hover handling */}
+        <button className="hidden md:block bg-gradient-to-r from-amber-500 to-orange-500 md:hover:from-amber-600 md:hover:to-orange-600 text-white font-bold px-6 py-3 rounded-lg transition-all duration-300 md:hover:shadow-xl md:hover:shadow-amber-500/30 md:hover:scale-105 uppercase tracking-wide text-sm border border-amber-400/20 active:from-amber-500 active:to-orange-500 active:scale-100 active:shadow-none">
           Order Online
         </button>
 
@@ -134,9 +134,14 @@ export default function Navbar() {
               </a>
             );
           })}
+          {/* Mobile CTA Button - Fixed to prevent color change */}
           <button
-            className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg uppercase tracking-wide text-sm border border-amber-400/20"
+            className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold px-6 py-3 rounded-lg transition-all duration-200 uppercase tracking-wide text-sm border border-amber-400/20 active:from-amber-600 active:to-orange-600 active:scale-95 touch-manipulation"
             onClick={() => setIsOpen(false)}
+            style={{
+              // Force the gradient colors and prevent any hover color changes on mobile
+              background: "linear-gradient(to right, #f59e0b, #ea580c)",
+            }}
           >
             Order Online
           </button>

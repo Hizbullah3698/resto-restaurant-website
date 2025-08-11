@@ -80,9 +80,17 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
+          {/* Primary CTA Button - Fixed for mobile */}
           <a
             href="#menu"
-            className="group bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/25 hover:scale-105 uppercase tracking-wide min-w-48"
+            className="group bg-gradient-to-r from-amber-500 to-amber-600 md:hover:from-amber-600 md:hover:to-amber-700 text-black px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 md:hover:shadow-2xl md:hover:shadow-amber-500/25 md:hover:scale-105 active:from-amber-600 active:to-amber-700 active:scale-95 uppercase tracking-wide min-w-48 touch-manipulation"
+            style={{
+              // Force orange gradient on mobile to prevent color changes
+              background:
+                window.innerWidth < 768
+                  ? "linear-gradient(to right, #f59e0b, #d97706)"
+                  : undefined,
+            }}
           >
             <span className="flex items-center justify-center gap-2">
               View Menu
@@ -100,14 +108,15 @@ export default function Hero() {
             </span>
           </a>
 
+          {/* Secondary CTA Button - Fixed for mobile */}
           <a
             href="#reservations"
-            className="group bg-transparent border-2 border-amber-500 hover:bg-amber-500 hover:text-black text-amber-400 hover:border-amber-500 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/25 hover:scale-105 uppercase tracking-wide min-w-48 backdrop-blur-sm"
+            className="group bg-transparent border-2 border-amber-500 md:hover:bg-amber-500 md:hover:text-black text-amber-400 md:hover:border-amber-500 active:bg-amber-500 active:text-black px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 md:hover:shadow-2xl md:hover:shadow-amber-500/25 md:hover:scale-105 active:scale-95 uppercase tracking-wide min-w-48 backdrop-blur-sm touch-manipulation"
           >
             <span className="flex items-center justify-center gap-2">
               Make Reservation
               <svg
-                className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-300"
+                className="w-5 h-5 transform md:group-hover:scale-110 transition-transform duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -129,10 +138,10 @@ export default function Hero() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 touch-manipulation ${
                 index === currentSlide
                   ? "bg-amber-400 scale-125 shadow-lg shadow-amber-400/50"
-                  : "bg-white/40 hover:bg-white/60 hover:scale-110"
+                  : "bg-white/40 md:hover:bg-white/60 md:hover:scale-110 active:bg-white/60 active:scale-110"
               }`}
             />
           ))}
@@ -140,7 +149,7 @@ export default function Hero() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center text-white/70 hover:text-amber-400 transition-colors duration-300 cursor-pointer">
+          <div className="flex flex-col items-center text-white/70 md:hover:text-amber-400 transition-colors duration-300 cursor-pointer">
             <span className="text-xs uppercase tracking-widest mb-2 font-semibold">
               Scroll
             </span>
@@ -161,12 +170,12 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Fixed for mobile */}
       <button
         onClick={() =>
           setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
         }
-        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white/20 hover:border-amber-400/50"
+        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 md:hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 md:hover:scale-110 active:bg-black/70 active:scale-95 backdrop-blur-sm border border-white/20 md:hover:border-amber-400/50 touch-manipulation"
       >
         <svg
           className="w-6 h-6"
@@ -185,7 +194,7 @@ export default function Hero() {
 
       <button
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white/20 hover:border-amber-400/50"
+        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 md:hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 md:hover:scale-110 active:bg-black/70 active:scale-95 backdrop-blur-sm border border-white/20 md:hover:border-amber-400/50 touch-manipulation"
       >
         <svg
           className="w-6 h-6"
@@ -216,6 +225,13 @@ export default function Hero() {
 
         .animate-fade-in {
           animation: fade-in 1s ease-out;
+        }
+
+        /* Additional mobile-specific styles to ensure consistent button colors */
+        @media (max-width: 767px) {
+          .group {
+            background: linear-gradient(to right, #f59e0b, #d97706) !important;
+          }
         }
       `}</style>
     </section>
