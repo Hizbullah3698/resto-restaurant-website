@@ -1,12 +1,26 @@
-# React + Vite
+# Resto - Modern Italian Restaurant Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A stunning, fully responsive restaurant website built with React.js and Tailwind CSS.
 
-Currently, two official plugins are available:
+## ✨ Features
+- Modern dark theme with elegant amber accents
+- Fully responsive design
+- Interactive hero slider
+- Menu showcase
+- Reservation booking system
+- Contact forms
+- Gallery section
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technologies Used
+- React.js
+- Tailwind CSS
+- JavaScript ES6+
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
+[View Live Site](your-demo-link)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎯 Perfect For
+- Restaurant websites
+- Food service businesses
+- Landing pages
+- Portfolio showcases
