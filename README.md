@@ -17,7 +17,7 @@ A stunning, fully responsive restaurant website built with React.js and Tailwind
 - JavaScript ES6+
 
 ## 🚀 Live Demo
-[View Live Site][https://vercel.com/hizbullah-wazirs-projects/resto-restaurant-website]
+[View Live Site][https://resto-restaurant-website.vercel.app/]
 
 ## 🎯 Perfect For
 - Restaurant websites
