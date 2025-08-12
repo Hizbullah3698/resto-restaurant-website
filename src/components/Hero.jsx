@@ -35,7 +35,6 @@ export default function Hero() {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
-
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -79,12 +78,11 @@ export default function Hero() {
           {slides[currentSlide].description}
         </p>
 
-        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
-          {/* Primary Button */}
+          {/* Primary CTA */}
           <a
             href="#menu"
-            className="group bg-gradient-to-r from-amber-500 to-orange-500 text-black px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 uppercase tracking-wide min-w-48 touch-manipulation active:from-amber-500 active:to-orange-500
+            className="group bg-gradient-to-r from-amber-500 to-amber-600 text-black px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 uppercase tracking-wide min-w-48 touch-manipulation
                        md:hover:from-amber-600 md:hover:to-amber-700 md:hover:shadow-2xl md:hover:shadow-amber-500/25 md:hover:scale-105
                        md:active:from-amber-600 md:active:to-amber-700 md:active:scale-95"
           >
@@ -104,10 +102,12 @@ export default function Hero() {
             </span>
           </a>
 
-          {/* Secondary Button */}
+          {/* Secondary CTA */}
           <a
             href="#reservations"
-            className="group bg-transparent border-2 border-amber-500 md:hover:bg-amber-500 md:hover:text-black text-amber-400 md:hover:border-amber-500 active:bg-amber-500 active:text-black px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 md:hover:shadow-2xl md:hover:shadow-amber-500/25 md:hover:scale-105 active:scale-95 uppercase tracking-wide min-w-48 backdrop-blur-sm touch-manipulation"
+            className="group bg-transparent border-2 border-amber-500 text-amber-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 uppercase tracking-wide min-w-48 backdrop-blur-sm touch-manipulation
+                       md:hover:bg-amber-500 md:hover:text-black md:hover:border-amber-500 
+                       md:active:bg-amber-500 md:active:text-black md:hover:shadow-2xl md:hover:shadow-amber-500/25 md:hover:scale-105 md:active:scale-95"
           >
             <span className="flex items-center justify-center gap-2">
               Make Reservation
@@ -128,64 +128,41 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Slide Indicators with Arrow in Center */}
+        {/* Slide Indicators */}
         <div className="flex items-center justify-center space-x-3 mb-8">
-          {slides.map((_, index) => {
-            if (index === 2) {
-              return (
-                <div key="center-group" className="flex items-center space-x-3">
-                  <button
-                    onClick={() => setCurrentSlide(1)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      1 === currentSlide
-                        ? "bg-amber-400 scale-125 shadow-lg shadow-amber-400/50"
-                        : "bg-white/40 md:hover:bg-white/60 md:hover:scale-110"
-                    }`}
-                  />
-                  <div className="flex flex-col items-center text-white/70 md:hover:text-amber-400 transition-colors duration-300 cursor-pointer">
-                    <span className="text-xs uppercase tracking-widest mb-1 font-semibold">
-                      Scroll
-                    </span>
-                    <svg
-                      className="w-5 h-5 drop-shadow-md"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                      />
-                    </svg>
-                  </div>
-                  <button
-                    onClick={() => setCurrentSlide(3)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      3 === currentSlide
-                        ? "bg-amber-400 scale-125 shadow-lg shadow-amber-400/50"
-                        : "bg-white/40 md:hover:bg-white/60 md:hover:scale-110"
-                    }`}
-                  />
-                </div>
-              );
-            }
-            if (index < 2 || index > 2) {
-              return (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide
-                      ? "bg-amber-400 scale-125 shadow-lg shadow-amber-400/50"
-                      : "bg-white/40 md:hover:bg-white/60 md:hover:scale-110"
-                  }`}
-                />
-              );
-            }
-            return null;
-          })}
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 touch-manipulation ${
+                index === currentSlide
+                  ? "bg-amber-400 scale-125 shadow-lg shadow-amber-400/50"
+                  : "bg-white/40 md:hover:bg-white/60 md:hover:scale-110 active:bg-white/60 active:scale-110"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="flex flex-col items-center text-white/70 md:hover:text-amber-400 transition-colors duration-300 cursor-pointer">
+            <span className="text-xs uppercase tracking-widest mb-2 font-semibold">
+              Scroll
+            </span>
+            <svg
+              className="w-5 h-5 drop-shadow-md"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
         </div>
       </div>
 
@@ -194,7 +171,8 @@ export default function Hero() {
         onClick={() =>
           setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
         }
-        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 md:hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 md:hover:scale-110 active:bg-black/70 active:scale-95 backdrop-blur-sm border border-white/20 md:hover:border-amber-400/50 touch-manipulation"
+        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 touch-manipulation
+                   md:hover:bg-black/70 md:hover:scale-110 md:active:bg-black/70 md:active:scale-95 md:hover:border-amber-400/50"
       >
         <svg
           className="w-6 h-6"
@@ -213,7 +191,8 @@ export default function Hero() {
 
       <button
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 md:hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 md:hover:scale-110 active:bg-black/70 active:scale-95 backdrop-blur-sm border border-white/20 md:hover:border-amber-400/50 touch-manipulation"
+        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 touch-manipulation
+                   md:hover:bg-black/70 md:hover:scale-110 md:active:bg-black/70 md:active:scale-95 md:hover:border-amber-400/50"
       >
         <svg
           className="w-6 h-6"
