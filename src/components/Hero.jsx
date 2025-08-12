@@ -34,8 +34,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
-
+    }, 5000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -80,17 +79,12 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
-          {/* Primary CTA Button - Fixed for mobile */}
+          {/* Primary CTA */}
           <a
             href="#menu"
-            className="group bg-gradient-to-r from-amber-500 to-amber-600 md:hover:from-amber-600 md:hover:to-amber-700 text-black px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 md:hover:shadow-2xl md:hover:shadow-amber-500/25 md:hover:scale-105 active:from-amber-600 active:to-amber-700 active:scale-95 uppercase tracking-wide min-w-48 touch-manipulation"
-            style={{
-              // Force orange gradient on mobile to prevent color changes
-              background:
-                window.innerWidth < 768
-                  ? "linear-gradient(to right, #f59e0b, #d97706)"
-                  : undefined,
-            }}
+            className="group bg-gradient-to-r from-amber-500 to-amber-600 text-black px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 uppercase tracking-wide min-w-48 touch-manipulation
+                       md:hover:from-amber-600 md:hover:to-amber-700 md:hover:shadow-2xl md:hover:shadow-amber-500/25 md:hover:scale-105
+                       md:active:from-amber-600 md:active:to-amber-700 md:active:scale-95"
           >
             <span className="flex items-center justify-center gap-2">
               View Menu
@@ -108,10 +102,12 @@ export default function Hero() {
             </span>
           </a>
 
-          {/* Secondary CTA Button - Fixed for mobile */}
+          {/* Secondary CTA */}
           <a
             href="#reservations"
-            className="group bg-transparent border-2 border-amber-500 md:hover:bg-amber-500 md:hover:text-black text-amber-400 md:hover:border-amber-500 active:bg-amber-500 active:text-black px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 md:hover:shadow-2xl md:hover:shadow-amber-500/25 md:hover:scale-105 active:scale-95 uppercase tracking-wide min-w-48 backdrop-blur-sm touch-manipulation"
+            className="group bg-transparent border-2 border-amber-500 text-amber-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 uppercase tracking-wide min-w-48 backdrop-blur-sm touch-manipulation
+                       md:hover:bg-amber-500 md:hover:text-black md:hover:border-amber-500 
+                       md:active:bg-amber-500 md:active:text-black md:hover:shadow-2xl md:hover:shadow-amber-500/25 md:hover:scale-105 md:active:scale-95"
           >
             <span className="flex items-center justify-center gap-2">
               Make Reservation
@@ -170,12 +166,13 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Navigation Arrows - Fixed for mobile */}
+      {/* Navigation Arrows */}
       <button
         onClick={() =>
           setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
         }
-        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 md:hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 md:hover:scale-110 active:bg-black/70 active:scale-95 backdrop-blur-sm border border-white/20 md:hover:border-amber-400/50 touch-manipulation"
+        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 touch-manipulation
+                   md:hover:bg-black/70 md:hover:scale-110 md:active:bg-black/70 md:active:scale-95 md:hover:border-amber-400/50"
       >
         <svg
           className="w-6 h-6"
@@ -194,7 +191,8 @@ export default function Hero() {
 
       <button
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 md:hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 md:hover:scale-110 active:bg-black/70 active:scale-95 backdrop-blur-sm border border-white/20 md:hover:border-amber-400/50 touch-manipulation"
+        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 touch-manipulation
+                   md:hover:bg-black/70 md:hover:scale-110 md:active:bg-black/70 md:active:scale-95 md:hover:border-amber-400/50"
       >
         <svg
           className="w-6 h-6"
@@ -225,13 +223,6 @@ export default function Hero() {
 
         .animate-fade-in {
           animation: fade-in 1s ease-out;
-        }
-
-        /* Additional mobile-specific styles to ensure consistent button colors */
-        @media (max-width: 767px) {
-          .group {
-            background: linear-gradient(to right, #f59e0b, #d97706) !important;
-          }
         }
       `}</style>
     </section>
