@@ -136,12 +136,8 @@ export default function Navbar() {
           })}
           {/* Mobile CTA Button - Fixed to prevent color change */}
           <button
-            className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold px-6 py-3 rounded-lg transition-all duration-200 uppercase tracking-wide text-sm border border-amber-400/20 active:from-amber-600 active:to-orange-600 active:scale-95 touch-manipulation"
+            className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold px-6 py-3 rounded-lg transition-all duration-200 uppercase tracking-wide text-sm border border-amber-400/20 touch-manipulation"
             onClick={() => setIsOpen(false)}
-            style={{
-              // Force the gradient colors and prevent any hover color changes on mobile
-              background: "linear-gradient(to right, #f59e0b, #ea580c)",
-            }}
           >
             Order Online
           </button>
