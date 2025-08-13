@@ -3,21 +3,21 @@ import React from "react";
 const Testimonials = () => {
   const reviews = [
     {
-      text: "The pasta here is absolutely amazing! Tastes just like Italy.",
+      text: "Best burger I've ever had! Juicy, perfectly grilled, and packed with flavor.",
       name: "Sarah Johnson",
       role: "Food Blogger",
       img: "https://randomuser.me/api/portraits/women/44.jpg",
       rating: 5,
     },
     {
-      text: "A perfect place for a family dinner. Highly recommended!",
+      text: "Their BBQ Bacon Burger is out of this world. I’m officially addicted!",
       name: "Michael Smith",
       role: "Local Guide",
       img: "https://randomuser.me/api/portraits/men/45.jpg",
       rating: 5,
     },
     {
-      text: "From appetizers to dessert, everything was top-notch!",
+      text: "Crispy fries, smoky burgers, and great vibes — what more could you want?",
       name: "Emily Davis",
       role: "Chef",
       img: "https://randomuser.me/api/portraits/women/65.jpg",
@@ -46,8 +46,8 @@ const Testimonials = () => {
             What Our <span className="text-amber-400">Customers Say</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Don't just take our word for it - hear what our satisfied customers
-            have to say about their dining experience.
+            Real feedback from burger lovers who can’t get enough of our
+            flame-grilled goodness.
           </p>
         </div>
 
@@ -128,18 +128,18 @@ const Testimonials = () => {
         {/* CTA Section */}
         <div className="text-center mt-16 p-8 bg-gray-800/30 backdrop-blur-sm rounded-2xl border border-gray-700/50">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Ready to Create Your Own{" "}
-            <span className="text-amber-400">Amazing Experience</span>?
+            Hungry for Your Own{" "}
+            <span className="text-amber-400">Burger Experience</span>?
           </h3>
           <p className="text-gray-300 mb-6 max-w-xl mx-auto">
-            Join thousands of satisfied customers and discover why Resto is the
-            top choice for authentic Italian cuisine.
+            Join thousands of satisfied customers who know there’s no better
+            place for a perfectly grilled burger and crispy fries.
           </p>
           <a
-            href="#reservations"
+            href="#order"
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-8 py-4 rounded-lg text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/25 hover:scale-105 uppercase tracking-wide border border-amber-400/20"
           >
-            Book Your Table
+            Order Now
             <svg
               className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
               fill="currentColor"

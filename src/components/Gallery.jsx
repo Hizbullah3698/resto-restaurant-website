@@ -3,18 +3,18 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 const images = [
+  { src: "/images/burger.jpg", alt: "Signature Burger", category: "Burgers" },
   {
-    src: "/images/about.jpg",
-    alt: "About the restaurant",
-    category: "Restaurant",
+    src: "/images/burger2.jpg",
+    alt: "Cheesy Double Smash",
+    category: "Burgers",
   },
-  { src: "/images/bruschetta.jpg", alt: "Bruschetta", category: "Appetizers" },
-  { src: "/images/carbonara.jpg", alt: "Carbonara", category: "Pasta" },
   {
-    src: "/images/hero-bg.jpg",
-    alt: "Restaurant Ambiance",
-    category: "Ambiance",
+    src: "/images/doublesmash.jpg",
+    alt: "Ultimate Double Smash Burger",
+    category: "Burgers",
   },
+  { src: "/images/loadedfries.jpg", alt: "Loaded Fries", category: "Sides" },
   { src: "/images/margherita.jpg", alt: "Margherita Pizza", category: "Pizza" },
   { src: "/images/tiramisu.jpg", alt: "Tiramisu", category: "Desserts" },
 ];
@@ -22,7 +22,7 @@ const images = [
 export default function Gallery() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("Burgers"); // Default category
 
   const categories = ["All", ...new Set(images.map((img) => img.category))];
   const filteredImages =
@@ -49,8 +49,7 @@ export default function Gallery() {
             Our <span className="text-amber-400">Gallery</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Take a visual journey through our culinary creations and restaurant
-            atmosphere.
+            A delicious look at our signature burgers, sides, and sweet treats.
           </p>
         </div>
 

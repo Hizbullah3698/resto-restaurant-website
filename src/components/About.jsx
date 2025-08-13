@@ -15,8 +15,8 @@ export default function About() {
           <div className="lg:w-1/2">
             <div className="relative group">
               <img
-                src="/images/about.jpg"
-                alt="About our restaurant"
+                src="/images/About2.jpg"
+                alt="About Meat Cheese Grill"
                 className="rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105"
               />
               {/* Image Overlay */}
@@ -36,42 +36,44 @@ export default function About() {
 
             {/* Heading */}
             <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-              About <span className="text-amber-400">Us</span>
+              About <span className="text-amber-400">Meat Cheese Grill</span>
             </h2>
 
             {/* Content */}
             <div className="space-y-6 text-lg leading-relaxed text-gray-200">
               <p className="text-xl leading-relaxed">
-                At <span className="font-bold text-amber-400">Resto</span>, we
-                bring the authentic taste of Italy to your table. Our master
-                chefs use fresh, locally-sourced ingredients to craft delicious
-                dishes that transport you straight to the heart of Italy.
+                At{" "}
+                <span className="font-bold text-amber-400">
+                  Meat Cheese Grill
+                </span>
+                , we serve up bold flavors, juicy burgers, sizzling grills, and
+                cheesy indulgence — all made fresh and served with passion.
               </p>
 
               <p>
-                Whether it's a romantic dinner, a family gathering, or a quick
-                lunch, we promise a warm and welcoming atmosphere that makes
-                every meal special. Each dish tells a story of tradition,
-                passion, and culinary excellence.
+                Every bite is crafted from premium meats, freshly baked buns,
+                and gourmet toppings. Whether you’re here for a quick lunch, a
+                weekend hangout, or a late-night craving, we make sure your meal
+                is unforgettable.
               </p>
 
               {/* Features */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
                 <div className="flex items-center gap-3 text-gray-300">
                   <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                  <span>Fresh Local Ingredients</span>
+                  <span>Fresh, Juicy Burgers</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                  <span>Authentic Italian Recipes</span>
+                  <span>Signature Grilled Flavor</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                  <span>Warm Atmosphere</span>
+                  <span>Loaded Cheese & Toppings</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                  <span>Family Traditions</span>
+                  <span>Perfect for Every Craving</span>
                 </div>
               </div>
             </div>
@@ -104,7 +106,7 @@ export default function About() {
           <div className="text-center">
             <div className="text-3xl font-bold text-amber-400 mb-2">25+</div>
             <div className="text-gray-400 uppercase tracking-wide text-sm">
-              Years Experience
+              Years Grilling
             </div>
           </div>
           <div className="text-center">
@@ -116,13 +118,13 @@ export default function About() {
           <div className="text-center">
             <div className="text-3xl font-bold text-amber-400 mb-2">50+</div>
             <div className="text-gray-400 uppercase tracking-wide text-sm">
-              Menu Items
+              Signature Items
             </div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-amber-400 mb-2">5★</div>
             <div className="text-gray-400 uppercase tracking-wide text-sm">
-              Average Rating
+              Rave Reviews
             </div>
           </div>
         </div>

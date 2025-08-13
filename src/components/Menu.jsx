@@ -2,35 +2,36 @@ export default function Menu() {
   const menuItems = [
     {
       id: 1,
-      name: "Margherita Pizza",
-      price: "$12",
-      description: "Fresh mozzarella, tomato sauce, basil",
-      image: "/images/margherita.jpg",
-      category: "Pizza",
+      name: "Classic Cheeseburger",
+      price: "$10",
+      description: "Juicy beef patty, melted cheddar, fresh lettuce, tomato",
+      image: "/images/cheeseburger.jpg",
+      category: "Burgers",
     },
     {
       id: 2,
-      name: "Pasta Carbonara",
-      price: "$15",
-      description: "Egg, pecorino cheese, pancetta, black pepper",
-      image: "/images/carbonara.jpg",
-      category: "Pasta",
+      name: "BBQ Bacon Burger",
+      price: "$12",
+      description: "Smoky BBQ sauce, crispy bacon, cheddar cheese, onion rings",
+      image: "/images/bbqbacon.jpg",
+      category: "Burgers",
     },
     {
       id: 3,
-      name: "Tiramisu",
+      name: "Loaded Fries",
       price: "$8",
-      description: "Coffee-soaked ladyfingers, mascarpone, cocoa",
-      image: "/images/tiramisu.jpg",
-      category: "Dessert",
+      description: "Golden fries topped with cheese, bacon bits, and sauce",
+      image: "/images/loadedfries.jpg",
+      category: "Sides",
     },
     {
       id: 4,
-      name: "Bruschetta",
-      price: "$7",
-      description: "Toasted bread, tomatoes, garlic, basil",
-      image: "/images/bruschetta.jpg",
-      category: "Appetizer",
+      name: "Double Smash Burger",
+      price: "$14",
+      description:
+        "Two smashed patties, melted cheese, grilled onions, pickles",
+      image: "/images/doublesmash.jpg",
+      category: "Burgers",
     },
   ];
 
@@ -55,8 +56,8 @@ export default function Menu() {
             Our <span className="text-amber-400">Menu</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Discover our carefully crafted selection of authentic Italian
-            dishes, made with the finest ingredients and traditional recipes.
+            Savor our flame-grilled burgers, cheesy sides, and loaded favorites
+            — made fresh and served hot every time.
           </p>
         </div>
 

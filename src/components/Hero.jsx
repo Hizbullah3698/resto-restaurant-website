@@ -5,24 +5,27 @@ export default function Hero() {
 
   const slides = [
     {
-      image: "/images/carbonara.jpg",
-      title: "Authentic Italian",
-      subtitle: "Pasta",
-      description: "Handmade fresh pasta with traditional Italian recipes",
-    },
-    {
-      image: "/images/margherita.jpg",
-      title: "Wood-Fired",
-      subtitle: "Pizza",
+      image: "/images/burger.jpg",
+      title: "Juicy Gourmet",
+      subtitle: "Burgers",
       description:
-        "Crispy thin crust pizzas baked in our traditional wood oven",
+        "Premium grilled beef patties stacked with fresh veggies, melted cheese, and our signature sauces.",
     },
+
     {
-      image: "/images/wine.jpg",
-      title: "Fine Italian",
-      subtitle: "Wines",
-      description: "Carefully selected wines from the finest Italian vineyards",
+      image: "/images/burger2.jpg",
+      title: "Smoky BBQ",
+      subtitle: "Burger",
+      description: "Char-grilled perfection with bold BBQ flavor.",
     },
+
+    {
+      image: "/images/loadedfries1.jpg",
+      title: "Loaded",
+      subtitle: "Fries",
+      description: "Crispy golden fries piled high with cheese and toppings.",
+    },
+
     {
       image: "/images/tiramisu.jpg",
       title: "Homemade",
